@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selamat Ulang Tahun ke-25, Hanyfah 💖</title>
+<meta name="theme-color" content="#190a2b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="lock">
+<canvas id="fx"></canvas>
+<div id="hearts" aria-hidden="true"></div>
+
+<div id="gate">
+  <div>
+    <h1>Ada kejutan buat kamu</h1>
+    <button id="gift" aria-label="Buka hadiah">🎁</button>
+    <p>Ketuk hadiahnya ya</p>
+  </div>
+</div>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hi">Selamat ulang tahun</div>
+      <div class="big"><div class="orbit" aria-hidden="true"><span style="transform:translate(0,-150px)">💖</span><span style="transform:translate(130px,70px)">✨</span><span style="transform:translate(-130px,70px)">🌸</span></div><b>25</b></div>
+      <div class="name" id="nama">Ade Hanyfah</div>
+      <p class="wish">Panjang umur, sehat selalu, dan bahagia tanpa henti.</p>
+      <p class="hint">Gulir ke bawah, masih banyak kejutan ↓</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap rv">
+      <div class="paper">
+        <h3>Untuk sayangku</h3>
+        <div id="typed" aria-live="polite"></div>
+        <div class="sign" id="dari"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap rv">
+      <h2>Tiup lilinnya,<br>buat satu harapan</h2>
+      <svg class="cake" viewBox="0 0 300 260" role="img" aria-label="Kue ulang tahun dengan lima lilin">
+        <ellipse cx="150" cy="238" rx="130" ry="14" fill="#0006"/>
+        <rect x="30" y="150" width="240" height="84" rx="16" fill="#ff8fc0"/>
+        <path d="M30 168c20 18 20-8 40 8s20-8 40 8 20-8 40 8 20-8 40 8 20-8 40 8 20-8 40 0v-30H30z" fill="#fff4f8"/>
+        <rect x="60" y="102" width="180" height="62" rx="14" fill="#ffd27a"/>
+        <path d="M60 120c15 14 15-6 30 6s15-6 30 6 15-6 30 6 15-6 30 6 15-6 30 6v-24H60z" fill="#fff4f8"/>
+        <text x="150" y="208" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-weight="900" font-size="46" fill="#fff4f8">25</text>
+        <g id="candles"></g>
+      </svg>
+      <button class="btn" id="blow">Tiup lilin 🎂</button>
+      <div id="cakeMsg" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap rv">
+      <h2>Doa dan harapanku<br>di umur 25</h2>
+      <div class="grid">
+        <div class="card"><em>🌿</em><h3>Sehat selalu</h3><p>Badan kuat, hati tenang, tidur nyenyak setiap malam.</p></div>
+        <div class="card"><em>⏳</em><h3>Panjang umur</h3><p>Umur yang berkah dan penuh hari-hari yang baik.</p></div>
+        <div class="card"><em>🌈</em><h3>Bahagia terus</h3><p>Tawamu selalu lebih sering daripada air matamu.</p></div>
+        <div class="card"><em>🌟</em><h3>Mimpi tercapai</h3><p>Satu per satu cita-citamu jadi nyata.</p></div>
+        <div class="card"><em>💰</em><h3>Rezeki lancar</h3><p>Dimudahkan, dicukupkan, dan dilimpahkan.</p></div>
+        <div class="card"><em>💞</em><h3>Cinta yang hangat</h3><p>Dikelilingi orang-orang yang tulus menyayangimu.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap rv">
+      <h2>25 alasan aku<br>sayang kamu</h2>
+      <div id="reason" aria-live="polite">Ketuk angkanya satu per satu 💗</div>
+      <div class="hgrid" id="hgrid"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap rv">
+      <h2>Potongan kenangan kita</h2>
+      <div class="pol" id="pol"></div>
+    </div>
+  </section>
+
+  <section class="end">
+    <div class="wrap rv">
+      <div class="beat">💖</div>
+      <div class="big2">Aku sayang kamu</div>
+      <p>Selamat ulang tahun yang ke-25, <span id="nama2"></span>.<br>Terima kasih sudah lahir ke dunia dan hadir di hidupku.</p>
+      <button class="btn" id="again">Rayakan lagi 🎉</button>
+    </div>
+  </section>
+  <footer>Dibuat dengan cinta oleh <span id="dari2"></span></footer>
+</main>
+
+<script>
+const CFG = {
+  nama: "Hanyfah",
+  dari: "Adrian",
+  foto: ["foto1.jpeg","foto2.jpeg","foto3.jpeg","foto4.jpeg","foto5.jpeg","foto6.jpeg"],
+  caption: ["Hari yang manis","Senyum favoritku","Kita berdua","Momen kecil","Selalu bareng","Untuk dikenang"],
+  surat: "Hai sayang, hari ini umurmu genap 25 tahun.\n\nTerima kasih sudah jadi tempat pulang, teman ngobrol, dan alasan aku tersenyum setiap hari. Di usia yang baru ini, aku berdoa semoga kamu selalu sehat, panjang umur, dan dikelilingi kebahagiaan.\n\nSemoga semua yang kamu impikan satu per satu terwujud. Apa pun yang terjadi nanti, aku di sini, di sampingmu."
+};
+const ALASAN = ["Senyummu bikin hariku terang","Kamu bikin aku ngerasa tenang","Tawamu menular","Kamu perhatian sama hal kecil","Kamu sabar menghadapi aku","Kamu apa adanya","Suaramu favoritku","Kamu kuat, walau jarang bilang","Kamu bikin rumah terasa hangat","Kamu pendengar yang baik","Kamu selalu semangatin aku","Cara kamu peduli itu tulus","Kamu bikin hal biasa jadi seru","Kamu pintar bikin aku luluh","Kamu hadiah terbaik dari Tuhan","Kamu bikin aku jadi lebih baik","Kamu cantik luar dalam","Kamu tempat ceritaku","Kamu selalu ada pas aku butuh","Kamu bikin aku berani bermimpi","Pelukanmu obat segala capek","Kamu lucu tanpa sadar","Kamu selalu setia buatkan ku Sepanjang Masa","Kamu rumahku","Karena itu kamu, dan aku sayang kamu"];
+
+const $ = s => document.querySelector(s);
+$('#nama').textContent = "Ade " + CFG.nama; $('#nama2').textContent = CFG.nama;
+$('#dari').textContent = "Dengan cinta, " + CFG.dari; $('#dari2').textContent = CFG.dari;
+document.title = "Selamat Ulang Tahun ke-25, " + CFG.nama + " 💖";
+
+const H = $('#hearts'), em = ['💖','💗','✨','🌸','💕','⭐'];
+for (let i = 0; i < 20; i++) {
+  const e = document.createElement('i');
+  e.textContent = em[i % em.length];
+  e.style.cssText = `left:${Math.random()*100}%;font-size:${14+Math.random()*22}px;animation-duration:${9+Math.random()*12}s;animation-delay:${-Math.random()*20}s`;
+  H.appendChild(e);
+}
+
+const cv = $('#fx'), cx = cv.getContext('2d'); let P = [], run = false;
+const fit = () => { const d = Math.min(devicePixelRatio || 1, 2); cv.width = innerWidth * d; cv.height = innerHeight * d; cv.style.width = innerWidth + 'px'; cv.style.height = innerHeight + 'px'; cx.setTransform(d, 0, 0, d, 0, 0); }; fit(); addEventListener('resize', fit);
+const COL = ['#ffd27a','#ff5c9a','#ff8fc0','#b06cff','#fff','#7ee0ff'];
+function burst(x, y, n = 120) {
+  for (let i = 0; i < n; i++) {
+    const a = Math.random() * Math.PI * 2, s = 4 + Math.random() * 9;
+    P.push({x, y, vx: Math.cos(a)*s, vy: Math.sin(a)*s - 5, g: .22, r: 4 + Math.random()*5, c: COL[i % COL.length], l: 110 + Math.random()*60, rot: Math.random()*6, heart: Math.random() < .25});
+  }
+  if (!run) { run = true; requestAnimationFrame(tick); }
+}
+function tick() {
+  cx.clearRect(0, 0, innerWidth, innerHeight);
+  P = P.filter(p => p.l > 0);
+  for (const p of P) {
+    p.x += p.vx; p.y += p.vy; p.vy += p.g; p.vx *= .985; p.l--; p.rot += .15;
+    cx.globalAlpha = Math.min(1, p.l / 40); cx.fillStyle = p.c;
+    if (p.heart) { cx.font = p.r*3 + 'px serif'; cx.fillText('♥', p.x, p.y); }
+    else { cx.save(); cx.translate(p.x, p.y); cx.rotate(p.rot); cx.fillRect(-p.r/2, -p.r/4, p.r, p.r/2); cx.restore(); }
+  }
+  P.length ? requestAnimationFrame(tick) : (run = false, cx.clearRect(0, 0, innerWidth, innerHeight));
+}
+const fireworks = () => [0, 350, 700, 1050, 1400].forEach(t => setTimeout(() => burst(innerWidth * (.15 + Math.random()*.7), innerHeight * (.15 + Math.random()*.4), 90), t));
+
+$('#gift').onclick = () => {
+  $('#gate').classList.add('gone'); document.body.classList.remove('lock');
+  burst(innerWidth/2, innerHeight/2, 200); fireworks();
+};
+
+let typedDone = false;
+function typeIt() {
+  if (typedDone) return; typedDone = true;
+  const el = $('#typed'); let i = 0;
+  const t = setInterval(() => { el.textContent = CFG.surat.slice(0, ++i); if (i >= CFG.surat.length) clearInterval(t); }, 32);
+}
+
+/* lilin */
+const cg = $('#candles'); let xs = [90, 120, 150, 180, 210];
+cg.innerHTML = xs.map((x, i) => `<rect x="${x-4}" y="70" width="8" height="34" rx="3" fill="${i%2?'#fff':'#ffd27a'}"/><path class="flame" d="M${x} 52c8 8 8 16 0 20-8-4-8-12 0-20z" fill="#ffb347"/>`).join('');
+const msgs = ['Yeay! Semoga semua harapanmu terkabul 🌟', 'Sudah ditiup. Aamiin untuk semua doamu 💖'];
+$('#blow').onclick = () => {
+  const fl = document.querySelectorAll('.flame'), off = fl[0].classList.contains('off');
+  fl.forEach((f, i) => setTimeout(() => f.classList.toggle('off', !off), i * 140));
+  if (!off) { setTimeout(() => { burst(innerWidth/2, innerHeight*.4, 180); fireworks(); }, 700); $('#cakeMsg').textContent = msgs[0]; $('#blow').textContent = 'Nyalakan lagi 🕯️'; }
+  else { $('#cakeMsg').textContent = ''; $('#blow').textContent = 'Tiup lilin 🎂'; }
+};
+
+/* 25 alasan */
+const hg = $('#hgrid');
+ALASAN.forEach((a, i) => {
+  const b = document.createElement('button'); b.textContent = i + 1; b.setAttribute('aria-label', 'Alasan ' + (i + 1));
+  b.onclick = () => { $('#reason').textContent = (i + 1) + '. ' + a; b.classList.add('seen'); const r = b.getBoundingClientRect(); burst(r.left + r.width/2, r.top, 18); };
+  hg.appendChild(b);
+});
+
+/* galeri */
+const pol = $('#pol'), items = CFG.foto.length ? CFG.foto : CFG.caption.map(() => null), ic = ['💖','🌸','✨','🥰','🌈','💐'];
+items.forEach((f, i) => {
+  const fg = document.createElement('figure');
+  fg.innerHTML = `<div class="ph">${f ? `<img src="${f}" alt="Kenangan ${i+1}" loading="lazy" onerror="this.replaceWith(document.createTextNode('${ic[i % ic.length]}'))">` : ic[i % ic.length]}</div><figcaption>${CFG.caption[i % CFG.caption.length]}</figcaption>`;
+  pol.appendChild(fg);
+});
+
+$('#again').onclick = () => { burst(innerWidth/2, innerHeight/2, 220); fireworks(); };
+
+/* muncul saat digulir */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); if (e.target.querySelector('#typed')) typeIt(); }
+}), {threshold: .25});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
